@@ -26,9 +26,9 @@ const Home = (): JSX.Element => {
           </div>
 
           <ol className='list-decimal list-inside'>
-            <li className='text-xl font-semibold text-black'>Ridho Zahran Pratama (22.11.4816)</li>
-            <li className='text-xl font-semibold text-black'>Linnda Prawidya  Nur&apos;Aini (22.11.4853)</li>
-            <li className='text-xl font-semibold text-black'>Linggar Elang Pratama (22.11.4849)</li>
+            <li className='text-xl font-semibold text-black'>RIDHO ZAHRAN PRATAMA (22.11.4872)</li>
+            <li className='text-xl font-semibold text-black'>LINNDA PRAWIDYA  NUR&apos;AINI (22.11.4853)</li>
+            <li className='text-xl font-semibold text-black'>LINGGAR ELANG PRATAMA (22.11.4849)</li>
           </ol>
         </div>
       </div>
