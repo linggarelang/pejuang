@@ -2,9 +2,9 @@ name: CI for Pejuang Application
 
 on:
   push:
-    branches: [main]
+    branches: [main, development]
   pull_request:
-    branches: [main]
+    branches: [main, development]
 
 jobs:
   nextjs-ci:
