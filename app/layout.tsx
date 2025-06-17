@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Syne } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
+import LenisProvider from "./providers/react-lenis";
 
 const syne = Syne({
   variable: "--font-syne",
@@ -21,11 +24,29 @@ export default function RootLayout({
       lang="en"
       className={`${syne.variable}`}
     >
-      <body>
-        <main>
-          {children}
-        </main>
-      </body>
+      <LenisProvider
+        root
+        options={{
+          duration: 2,
+          smoothWheel: true,
+          wheelMultiplier: 1,
+          touchMultiplier: 1.2,
+        }}
+      >
+        <body>
+          <header>
+            <Navbar />
+          </header>
+
+          <main>
+            {children}
+          </main>
+
+          <footer>
+            <Footer />
+          </footer>
+        </body>
+      </LenisProvider>
     </html>
   );
 };
