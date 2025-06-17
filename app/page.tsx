@@ -1,38 +1,19 @@
-"use client";
-import { JSX } from 'react';
-import { Typewriter } from 'react-simple-typewriter';
+import React, { JSX } from "react";
+
+// import BgImage from "./components/BgImage";
+import HomeMain from "./components/home/HomeMain";
+import HomeAbout from "./components/home/HomeAbout";
+import HomeProduct from "./components/home/HomeProduct";
+import HomeLocation from "./components/home/HomeLocation";
 
 const Home = (): JSX.Element => {
   return (
-    <>
-      <div>
-        <div className="w-full h-screen flex flex-col items-center justify-center select-none">
-
-          <div className='flex items-center pb-5 ps-10'>
-            <h1 className='text-2xl font-semibold'>TEAM</h1>
-            <h1
-              className='text-2xl font-semibold font-mono min-w-56 text-blue-800'
-            >
-              <span>&nbsp;</span>
-              <Typewriter
-                words={['DIGITAL BUSINESS', 'DEVELOPMENT', 'PEJUANG']}
-                loop={0}
-                cursor
-                typeSpeed={100}
-                deleteSpeed={50}
-                delaySpeed={1000}
-              />
-            </h1>
-          </div>
-
-          <ol className='list-decimal list-inside'>
-            <li className='text-xl font-semibold text-black'>RIDHO ZAHRAN PRATAMA (22.11.4872)</li>
-            <li className='text-xl font-semibold text-black'>LINNDA PRAWIDYA  NUR&apos;AINI (22.11.4853)</li>
-            <li className='text-xl font-semibold text-black'>LINGGAR ELANG PRATAMA (22.11.4849)</li>
-          </ol>
-        </div>
-      </div>
-    </>
+    <React.Fragment>
+      <HomeMain />
+      <HomeAbout />
+      <HomeProduct />
+      <HomeLocation />
+    </React.Fragment>
   );
-}
+};
 export default Home;
