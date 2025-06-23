@@ -56,7 +56,7 @@ const HomeAbout = (): JSX.Element => {
                 ABOUT US
             </motion.h1>
 
-            <div className="flex flex-col lg:flex-row items-center justify-between space-y-5 space-x-0 lg:space-x-24 mt-10">
+            <div className="flex flex-col lg:flex-row items-center justify-center space-y-5 space-x-0 lg:space-x-10 mt-10">
                 <motion.div
                     className="w-full h-auto"
                     initial={{ opacity: 0, x: -50 }}
@@ -67,7 +67,11 @@ const HomeAbout = (): JSX.Element => {
                     <p
                         className="text-justify"
                     >
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ratione quas, reiciendis ab architecto placeat iusto voluptate eius consectetur molestias nostrum adipisci labore esse quibusdam consequuntur. Expedita velit sapiente ipsum officia aliquid pariatur sit nihil veniam itaque, deserunt eligendi illo possimus suscipit enim harum accusantium nostrum consectetur molestiae deleniti voluptatibus alias. Iure architecto necessitatibus sapiente est labore voluptatibus, reprehenderit, adipisci consequuntur ad distinctio ullam suscipit, corrupti veritatis? Tenetur saepe repellat ducimus sit distinctio, doloremque id impedit autem eum veritatis minus! Accusantium ea repellendus tempora quos saepe delectus minus provident inventore hic possimus, repellat nam excepturi, aut labore, quasi fugit? Quisquam?
+                        Pejuang Coffee hadir sebagai tempat berlabuh bagi para pencinta kopi yang tak hanya mencari rasa, tapi juga makna. Lahir dari semangat para pejuang pagi, siang, hingga malam, kami percaya bahwa secangkir kopi mampu menjadi teman terbaik dalam setiap langkah perjuangan hidup.
+
+                        Kami memadukan cita rasa kopi lokal terbaik Indonesia dengan suasana hangat yang mendukung produktivitas dan kreativitas. Lewat aplikasi ini, Pejuang Coffee ingin lebih dekat denganmu — memudahkan pemesanan, berbagi cerita, hingga menikmati promo spesial hanya dalam genggaman.
+
+                        Pejuang bukan sekadar coffee shop. Kami adalah komunitas, tempat bertemu, dan ruang tumbuh bersama. Karena setiap pejuang pantas mendapatkan kopi terbaik.
                     </p>
                 </motion.div>
 
@@ -76,11 +80,11 @@ const HomeAbout = (): JSX.Element => {
                     style={{
                         rotateX,
                         rotateY,
-                        transformPerspective: 1000,
+                        transformPerspective: 1200,
                     }}
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
-                    className="w-full h-auto"
+                    className="w-1/2 h-auto"
                 >
                     <motion.div
                         className="w-full h-auto"
@@ -90,12 +94,12 @@ const HomeAbout = (): JSX.Element => {
                         viewport={{ once: false, amount: 0.5 }}
                     >
                         <Image
-                            src="/bg-image-pejuang.jpg"
+                            src="/img/others-6.jpg"
                             alt="Background Image"
                             objectFit="cover"
                             width={500}
                             height={500}
-                            className="w-full rounded-md"
+                            className="w-96 h-auto bg-cover bg-center rounded-md"
                         />
                     </motion.div>
                 </motion.div>

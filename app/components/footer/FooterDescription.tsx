@@ -4,9 +4,9 @@ const FooterDescription = (): JSX.Element => {
     return (
         <React.Fragment>
             <h1 className="text-2xl pb-2 lg:pb-5">Why People Like Us!</h1>
-            <p className="text-gray-300 font-extralight">Everyone loves us because we have different kinds of tea, especially green tea, black tea,
-                and also herbal tea and we also have different kinds of bread.
-            </p>
+            <blockquote className="text-gray-300 font-extralight text-justify">
+                Pejuang Coffee Shop is where flavor, comfort, and spirit come together. It&apos;s the perfect place to take a break, get some work done, or simply enjoy quality time with the people who matter most.
+            </blockquote>
         </React.Fragment>
     );
 };

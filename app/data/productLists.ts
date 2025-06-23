@@ -3,23 +3,23 @@ import { Products } from "@/app/types/products";
 export const products: Products[] = [
     {
         productId: 1,
-        name: "Product 1",
-        description: "Description for Product 1",
+        name: "Coffe Latter",
+        description: "Description for Coffe Latter",
         price: 100,
-        image: "/bg-image-pejuang.jpg",
+        image: "/img/latte.jpg",
     },
     {
         productId: 2,
-        name: "Product 2",
-        description: "Description for Product 2",
+        name: "Americano",
+        description: "Description for Americano",
         price: 200,
-        image: "/bg-image-pejuang.jpg",
+        image: "/img/americano.jpg",
     },
     {
         productId: 3,
-        name: "Product 3",
-        description: "Description for Product 3",
+        name: "Matcha Latte",
+        description: "Description for Matcha Latte",
         price: 300,
-        image: "/bg-image-pejuang.jpg",
+        image: "/img/matcha.jpg",
     },
 ]

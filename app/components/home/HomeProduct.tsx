@@ -63,8 +63,19 @@ const HomeProduct = () => {
                             alt={product.name}
                             width={150}
                             height={150}
-                            className="w-96 h-auto object-cover mb-4 rounded-lg shadow-md"
+                            className="w-96 h-96 object-cover mb-4 rounded-lg shadow-md"
                         />
+
+                        <motion.h2
+                            key={product.productId}
+                            initial={{ opacity: 0, y: -20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                            viewport={{ once: false, amount: 0.2 }}
+                            className="text-2xl font-semibold mb-2 text-center"
+                        >
+                            {product.name}
+                        </motion.h2>
                     </motion.div>
                 ))}
             </motion.div>
