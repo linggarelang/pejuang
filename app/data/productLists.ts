@@ -3,8 +3,8 @@ import { Products } from "@/app/types/products";
 export const products: Products[] = [
     {
         productId: 1,
-        name: "Coffe Latter",
-        description: "Description for Coffe Latter",
+        name: "Coffe Latte",
+        description: "Description for Coffe Latte",
         price: 100,
         image: "/img/latte.jpg",
     },

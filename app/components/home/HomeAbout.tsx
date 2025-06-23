@@ -84,7 +84,7 @@ const HomeAbout = (): JSX.Element => {
                     }}
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
-                    className="w-1/2 h-auto"
+                    className="w-full lg:w-1/2 h-auto"
                 >
                     <motion.div
                         className="w-full h-auto"

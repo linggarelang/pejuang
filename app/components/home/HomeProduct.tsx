@@ -32,7 +32,8 @@ const HomeProduct = () => {
             opacity: 0,
             y: -20,
             transition: {
-                duration: 0.4,
+                duration: 0.6,
+                delay: 1,
                 ease: 'easeIn',
             },
         },
@@ -44,7 +45,7 @@ const HomeProduct = () => {
                 initial={{ opacity: 0, y: -30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                viewport={{ once: false }}
+                viewport={{ once: false, amount: 0.2 }}
             >
                 Products
             </motion.h1>
@@ -54,10 +55,13 @@ const HomeProduct = () => {
                 variants={container}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: false, amount: 0.4 }}
+                viewport={{ once: false, amount: 0.2 }}
             >
                 {products.map((product) => (
-                    <motion.div key={product.productId} variants={item}>
+                    <motion.div
+                        key={product.productId}
+                        variants={item}
+                    >
                         <Image
                             src={product.image}
                             alt={product.name}
@@ -70,7 +74,7 @@ const HomeProduct = () => {
                             key={product.productId}
                             initial={{ opacity: 0, y: -20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
                             viewport={{ once: false, amount: 0.2 }}
                             className="text-2xl font-semibold mb-2 text-center"
                         >
