@@ -61,6 +61,7 @@ const HomeProduct = () => {
                     <motion.div
                         key={product.productId}
                         variants={item}
+                        className="flex flex-col items-center justify-center"
                     >
                         <Image
                             src={product.image}
