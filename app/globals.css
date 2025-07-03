@@ -21,7 +21,8 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  overflow: hidden !important;
+  box-sizing: border-box;
+  overflow-x: hidden !important;
   -ms-overflow-style: none;
   scrollbar-width: none; 
 }
