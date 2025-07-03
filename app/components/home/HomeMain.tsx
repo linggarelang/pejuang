@@ -12,7 +12,7 @@ const HomeMain = (): JSX.Element => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: .2, delay: 1.5, ease: 'easeInOut' }}
                     viewport={{ once: false, amount: 0.5 }}
-                    className="text-6xl md:text-7xl font-normal tracking-widest text-black"
+                    className="text-6xl md:text-7xl text-center font-normal tracking-widest text-black"
                 >
                     PEJUANG
                 </motion.h1>

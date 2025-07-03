@@ -84,10 +84,10 @@ const HomeAbout = (): JSX.Element => {
                     }}
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
-                    className="w-full lg:w-1/2 h-auto"
+                    className="w-full lg:w-1/2 h-auto overflow-hidden"
                 >
                     <motion.div
-                        className="w-full h-auto"
+                        className="w-auto h-auto"
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
@@ -96,10 +96,9 @@ const HomeAbout = (): JSX.Element => {
                         <Image
                             src="/img/others-6.jpg"
                             alt="Background Image"
-                            objectFit="cover"
                             width={500}
                             height={500}
-                            className="w-96 h-auto bg-cover bg-center rounded-md"
+                            className="w-full max-w-xs sm:max-w-md h-auto bg-cover object-cover rounded-md"
                         />
                     </motion.div>
                 </motion.div>

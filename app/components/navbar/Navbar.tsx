@@ -35,8 +35,9 @@ const Navbar = (): JSX.Element => {
             <div className="flex px-7 lg:px-20 py-5 justify-between items-center">
                 <Link
                     href="/"
+                    className="text-2xl text-center text-white font-semibold cursor-pointer"
                 >
-                    <h1 className="text-2xl text-white font-semibold cursor-pointer">PEJUANG</h1>
+                    PEJUANG
                 </ Link>
                 <HamburgerMenu
                     isOpen={isOpen}
