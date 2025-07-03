@@ -5,6 +5,8 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import LenisProvider from "./providers/react-lenis";
 
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 const syne = Syne({
   variable: "--font-syne",
   subsets: ["latin"],
@@ -34,6 +36,7 @@ export default function RootLayout({
         }}
       >
         <body>
+          <GoogleAnalytics gaId="G-MFS752DQ96" />
           <header>
             <Navbar />
           </header>
