@@ -97,9 +97,9 @@ const HomeAbout = (): JSX.Element => {
                         variants={textFadeUp}
                         className="text-sm md:text-base font-extralight leading-relaxed text-[#e4dbd1] mb-8 first-letter:text-[#f4c289]"
                     >
-                        Through this platform, we’ve made your favorite coffee just a few
+                        Through this platform, we&apos;ve made your favorite coffee just a few
                         taps away. No queues, no fuss — just great coffee, on demand. More
-                        than a drink, it's an experience built to fit right into your
+                        than a drink, it&apos;s an experience built to fit right into your
                         lifestyle.
                     </motion.p>
 
