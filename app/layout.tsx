@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
-import { Syne } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
 import LenisProvider from "./providers/react-lenis";
 
 import { GoogleAnalytics } from '@next/third-parties/google'
 
-const syne = Syne({
+import Navbar from "@/app/components/navbar/Navbar";
+import Footer from "@/app/components/footer/Footer";
+
+const poppins = Poppins({
   variable: "--font-syne",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
+
 export const metadata: Metadata = {
   title: "Pejuang App",
   description: "App for coffee lovers to track their coffee journey",
@@ -24,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable}`}
+      className={`${poppins.variable}`}
     >
       <LenisProvider
         root
@@ -37,15 +40,19 @@ export default function RootLayout({
       >
         <body>
           <GoogleAnalytics gaId="G-MFS752DQ96" />
-          <header>
+
+          {/* Navbar */}
+          <header className="relative">
             <Navbar />
           </header>
 
-          <main>
+          {/* Main Content */}
+          <main className="relative min-h-screen">
             {children}
           </main>
 
-          <footer>
+          {/* Footer */}
+          <footer className="bg-[#2f1b0c] text-[#f4f4f4] p-6">
             <Footer />
           </footer>
         </body>

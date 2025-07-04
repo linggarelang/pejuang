@@ -1,109 +1,202 @@
 "use client";
 
-import React, { type MouseEventHandler, JSX } from "react";
-import {
-    motion,
-    type MotionValue,
-    useMotionValue,
-    useTransform,
-    useSpring
-} from "framer-motion";
 import Image from "next/image";
+import React, { JSX } from "react";
+import { motion } from "framer-motion";
+import { FaArrowRight } from "react-icons/fa6";
 
+const textFadeUp: any = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+const textFadeLeft: any = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const textFadeRight: any = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const imageFadeLeft: any = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const imageFadeRight: any = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const buttonFadeUp: any = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+export const staggerContainer = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.3,
+            delayChildren: 0.4,
+        },
+    },
+};
+
+{/* About Section as HomeAbout */ }
 const HomeAbout = (): JSX.Element => {
-    const ref = React.useRef<HTMLDivElement>(null)
-
-    const rawX: MotionValue<number> = useMotionValue(0);
-    const rawY: MotionValue<number> = useMotionValue(0);
-
-    const mouseX: MotionValue<number> = useSpring(rawX, { stiffness: 150, damping: 15 });
-    const mouseY: MotionValue<number> = useSpring(rawY, { stiffness: 150, damping: 15 });
-
-    const rotateX: MotionValue<number> = useTransform(mouseY, [-100, 100], [5, -5]);
-    const rotateY: MotionValue<number> = useTransform(mouseX, [-100, 100], [-5, 5]);
-
-    const handleMouseMove: MouseEventHandler<HTMLDivElement> = (e: React.MouseEvent): void => {
-        const rect: DOMRect | undefined = ref.current?.getBoundingClientRect()
-
-        if (!rect) return
-
-        const { left, top, width, height } = rect
-
-        const x: number = e.clientX - (left ?? 0)
-        const y: number = e.clientY - (top ?? 0)
-
-        const xPercent: number = x / (width ?? 1)
-        const yPercent: number = y / (height ?? 1)
-
-        rawX.set(xPercent * 200 - 100);
-        rawY.set(yPercent * 200 - 100);
-    }
-
-    const handleMouseLeave: MouseEventHandler<HTMLDivElement> = (): void => {
-        mouseX.set(0)
-        mouseY.set(0)
-    }
-
     return (
-        <div className="w-full h-auto my-10 py-10 px-7 lg:px-20">
-            <motion.h1
-                className="text-center font-bold text-4xl lg:text-5xl"
-                initial={{ opacity: 0, y: -40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                viewport={{ once: false, amount: 0.5 }}
-            >
-                ABOUT US
-            </motion.h1>
+        <motion.section
+            className="relative w-full min-h-screen bg-[#432A1E] flex items-center justify-center py-20 px-4 md:px-0 overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={staggerContainer}
+        >
+            {/* Decorative Background Shape */}
+            <div className="absolute -top-10 -left-20 w-72 h-72 bg-[#f4c289]/10 rounded-full blur-2xl pointer-events-none" />
 
-            <div className="flex flex-col lg:flex-row items-center justify-center space-y-5 space-x-0 lg:space-x-10 mt-10">
+            <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+                {/* Left: Text Content */}
                 <motion.div
-                    className="w-full h-auto"
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    viewport={{ once: false, amount: 0.5 }}
-                >
-                    <p
-                        className="text-justify"
-                    >
-                        Pejuang Coffee hadir sebagai tempat berlabuh bagi para pencinta kopi yang tak hanya mencari rasa, tapi juga makna. Lahir dari semangat para pejuang pagi, siang, hingga malam, kami percaya bahwa secangkir kopi mampu menjadi teman terbaik dalam setiap langkah perjuangan hidup.
-
-                        Kami memadukan cita rasa kopi lokal terbaik Indonesia dengan suasana hangat yang mendukung produktivitas dan kreativitas. Lewat aplikasi ini, Pejuang Coffee ingin lebih dekat denganmu — memudahkan pemesanan, berbagi cerita, hingga menikmati promo spesial hanya dalam genggaman.
-
-                        Pejuang bukan sekadar coffee shop. Kami adalah komunitas, tempat bertemu, dan ruang tumbuh bersama. Karena setiap pejuang pantas mendapatkan kopi terbaik.
-                    </p>
-                </motion.div>
-
-                <motion.div
-                    ref={ref}
-                    style={{
-                        rotateX,
-                        rotateY,
-                        transformPerspective: 1200,
-                    }}
-                    onMouseMove={handleMouseMove}
-                    onMouseLeave={handleMouseLeave}
-                    className="w-full lg:w-1/2 h-auto overflow-hidden"
+                    variants={staggerContainer}
+                    className="flex flex-col justify-center h-full md:pr-10 text-white"
                 >
                     <motion.div
-                        className="w-auto h-auto"
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        viewport={{ once: false, amount: 0.5 }}
+                        variants={textFadeUp}
+                        className="w-14 h-[2px] bg-[#f4c289] mb-4 origin-left"
+                    />
+
+                    <motion.h1
+                        variants={textFadeUp}
+                        className="text-3xl md:text-5xl font-bold mb-3 leading-tight"
+                    >
+                        Our Story
+                    </motion.h1>
+
+                    <motion.h2
+                        variants={textFadeLeft}
+                        className="text-lg md:text-2xl font-serif italic font-medium mb-6 text-[#E3DAC9]"
+                    >
+                        Coffee with a Purpose — Anytime, Anywhere
+                    </motion.h2>
+
+                    <motion.p
+                        variants={textFadeRight}
+                        className="text-sm md:text-base font-extralight leading-relaxed text-[#e4dbd1] mb-4 first-letter:text-[#f4c289]"
+                    >
+                        Our journey began with a single cup — and a desire to share warmth
+                        and comfort in a fast-paced world. Every brew we serve is crafted
+                        with care: from handpicked beans to precise brewing, because we
+                        believe that everyone deserves a pause that feels just right.
+                    </motion.p>
+
+                    <motion.p
+                        variants={textFadeUp}
+                        className="text-sm md:text-base font-extralight leading-relaxed text-[#e4dbd1] mb-8 first-letter:text-[#f4c289]"
+                    >
+                        Through this platform, we’ve made your favorite coffee just a few
+                        taps away. No queues, no fuss — just great coffee, on demand. More
+                        than a drink, it's an experience built to fit right into your
+                        lifestyle.
+                    </motion.p>
+
+                    <motion.div
+                        variants={buttonFadeUp}
+                    >
+                        <motion.button
+                            whileHover="hover"
+                            initial="initial"
+                            transition={{ duration: 0.3 }}
+                            variants={{
+                                initial: {},
+                                hover: {},
+                            }}
+                            className="group w-fit bg-[#f4c289] hover:bg-[#B89475] text-black font-semibold px-6 py-3 rounded shadow cursor-pointer transition-colors duration-300 ease-in-out flex items-center"
+                        >
+                            Read More
+
+                            <motion.span
+                                variants={{
+                                    initial: { x: 0 },
+                                    hover: { x: [0, 5, 0] },
+                                }}
+                                transition={{
+                                    duration: 0.6,
+                                    ease: "easeInOut",
+                                    times: [0, 0.5, 1],
+                                    repeat: 0,
+                                }}
+                                className="ml-3"
+                            >
+                                <FaArrowRight />
+                            </motion.span>
+                        </motion.button>
+                    </motion.div>
+                </motion.div>
+
+                {/* Right: Images Grid Asymmetric */}
+                <motion.div
+                    variants={staggerContainer}
+                    className="grid grid-cols-5 grid-rows-2 gap-4 h-[340px] md:h-[400px]"
+                >
+                    {/* Image 1 */}
+                    <motion.div
+                        variants={imageFadeLeft}
+                        className="relative col-span-3 row-span-1 rounded-lg overflow-hidden"
+                    >
+                        <Image
+                            src="/img/latte.jpg"
+                            alt="Pour Over"
+                            fill
+                            className="object-cover object-center bg-center w-full h-full"
+                            priority
+                        />
+                    </motion.div>
+
+                    {/* Image 2 */}
+                    <motion.div
+                        variants={imageFadeRight}
+                        className="relative col-span-2 row-span-1 rounded-lg overflow-hidden"
+                    >
+                        <Image
+                            src="/img/americano.jpg"
+                            alt="Cafe Interior"
+                            fill
+                            className="object-cover w-full h-full"
+                        />
+                    </motion.div>
+
+                    {/* Image 3 */}
+                    <motion.div
+                        variants={imageFadeLeft}
+                        className="relative col-span-2 row-span-1 rounded-lg overflow-hidden"
+                    >
+                        <Image
+                            src="/img/matcha.jpg"
+                            alt="Open Sign"
+                            fill
+                            className="object-cover w-full h-full"
+                        />
+                    </motion.div>
+
+                    {/* Image 4 */}
+                    <motion.div
+                        variants={imageFadeRight}
+                        className="relative col-span-3 row-span-1 rounded-lg overflow-hidden"
                     >
                         <Image
                             src="/img/others-6.jpg"
-                            alt="Background Image"
-                            width={500}
-                            height={500}
-                            className="w-full max-w-xs sm:max-w-md h-auto bg-cover object-cover rounded-md"
+                            alt="Coffee Grounds"
+                            fill
+                            className="object-cover object-center bg-center w-full h-full"
                         />
                     </motion.div>
                 </motion.div>
             </div>
-        </div >
+        </motion.section>
     );
 };
 

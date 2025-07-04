@@ -1,20 +1,48 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { JSX } from "react";
-import React from "react";
 import { ToggleMenuProps } from "@/app/types/navbar";
 
 const HamburgerMenu = ({ isOpen, toggleMenu }: ToggleMenuProps): JSX.Element => {
-
     return (
         <div className="block cursor-pointer z-50">
             <button
                 onClick={toggleMenu}
-                className="relative w-8 h-8 flex flex-col justify-center items-center group cursor-pointer"
+                className="relative w-8 h-8 flex flex-col justify-center items-center group"
+                aria-label="Toggle menu"
             >
-                <span className={`absolute w-6 h-0.5 bg-white transform transition duration-300 ${isOpen ? "rotate-45" : "-translate-y-2"}`}
+                {/* Line 1 */}
+                <motion.span
+                    variants={{
+                        closed: { rotate: 0, y: -8 },
+                        open: { rotate: 45, y: 0 },
+                    }}
+                    animate={isOpen ? "open" : "closed"}
+                    transition={{ duration: 0.3 }}
+                    className="absolute w-6 h-0.5 bg-white"
                 />
-                <span className={`absolute w-6 h-0.5 bg-white transition-all duration-150 ${isOpen ? "opacity-0" : "opacity-100"}`}
+
+                {/* Line 2 */}
+                <motion.span
+                    variants={{
+                        closed: { opacity: 1 },
+                        open: { opacity: 0 },
+                    }}
+                    animate={isOpen ? "open" : "closed"}
+                    transition={{ duration: 0.2 }}
+                    className="absolute w-6 h-0.5 bg-white"
                 />
-                <span className={`absolute ${isOpen ? "right-auto w-6" : "right-1 w-3"} h-0.5 bg-white transform transition duration-300 ${isOpen ? "-rotate-45 " : "translate-y-2"}`}
+
+                {/* Line 3 */}
+                <motion.span
+                    variants={{
+                        closed: { rotate: 0, y: 8, width: 12, x: 6 },
+                        open: { rotate: -45, y: 0, width: 24, x: 0 },
+                    }}
+                    animate={isOpen ? "open" : "closed"}
+                    transition={{ duration: 0.3 }}
+                    className="absolute h-0.5 bg-white"
                 />
             </button>
         </div>

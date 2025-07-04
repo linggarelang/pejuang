@@ -3,7 +3,7 @@ export interface ToggleMenuProps {
     toggleMenu: () => void;
 };
 
-export interface NavList {
+export interface NavigationLists {
     id: number;
     name: string;
     path: string;
