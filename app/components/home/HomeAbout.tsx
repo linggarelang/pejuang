@@ -2,35 +2,35 @@
 
 import Image from "next/image";
 import React, { JSX } from "react";
-import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa6";
+import { Variants, motion } from "framer-motion";
 
-const textFadeUp: any = {
+const textFadeUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-const textFadeLeft: any = {
+const textFadeLeft: Variants = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-const textFadeRight: any = {
+const textFadeRight: Variants = {
     hidden: { opacity: 0, x: 50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-const imageFadeLeft: any = {
+const imageFadeLeft: Variants = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-const imageFadeRight: any = {
+const imageFadeRight: Variants = {
     hidden: { opacity: 0, x: 50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-const buttonFadeUp: any = {
+const buttonFadeUp: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
