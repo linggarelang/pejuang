@@ -1,3 +1,5 @@
+"use client";
+
 import React, { JSX } from "react";
 
 import Image from "next/image";
@@ -14,7 +16,7 @@ const HomeProduct = (): JSX.Element => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    className="text-3xl md:text-5xl font-bold text-[#2f1b0c]"
+                    className="text-3xl md:text-5xl font-bold text-[#2f1b0c] mb-7"
                 >
                     Explore Our Signature Brews
                 </motion.h2>
@@ -24,7 +26,7 @@ const HomeProduct = (): JSX.Element => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="text-lg md:text-2xl text-[#3e2c1f] italic mt-3"
+                    className="text-lg md:text-2xl text-[#3e2c1f] italic mb-3"
                 >
                     Crafted with care. Served with passion.
                 </motion.p>

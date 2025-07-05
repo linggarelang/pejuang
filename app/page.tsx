@@ -1,9 +1,13 @@
-"use client";
-
 import React, { JSX } from "react";
 
-import { HomeMain, HomeAbout, HomeTestimonials, HomeProduct } from "@/app/components/home";
-
+import {
+  HomeMain,
+  HomeAbout,
+  HomeTestimonials,
+  HomeProduct,
+  HomeWhyUs,
+  HomeEnd
+} from "@/app/components/home";
 
 const Home = (): JSX.Element => {
   return (
@@ -22,6 +26,11 @@ const Home = (): JSX.Element => {
       <div className="w-full h-30 bg-gradient-to-b from-[#AF8D72] to-[#E3DAC9]" />
       {/* Product Section */}
       <HomeProduct />
+      {/* Gradient Separator */}
+      <div className="w-full h-30 bg-gradient-to-b from-[#E3DAC9] to-[#F5F3EE]" />
+      {/* Why Us Section */}
+      <HomeWhyUs />
+      <HomeEnd />
     </React.Fragment>
   );
 };

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React, { JSX } from "react";
 import { motion } from "framer-motion";
@@ -66,7 +68,8 @@ const HomeTestimonials = (): JSX.Element => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                 viewport={{ once: true, amount: 0.6 }}
-                className="text-3xl md:text-5xl font-bold text-[#2f1b0c] text-center tracking-tight mb-7">
+                className="text-3xl md:text-5xl font-bold text-[#2f1b0c] text-center tracking-tight mb-7"
+            >
                 What Our Customers Say
             </motion.h2>
 
@@ -75,7 +78,8 @@ const HomeTestimonials = (): JSX.Element => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
                 viewport={{ once: true, amount: 0.6 }}
-                className="text-xl md:text-2xl text-[#3e2c1f] text-center italic mb-20">
+                className="text-xl md:text-2xl text-[#3e2c1f] text-center italic mb-20"
+            >
                 Real Stories. Real Smiles.
             </motion.p>
 

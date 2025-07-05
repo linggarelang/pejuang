@@ -52,7 +52,7 @@ export default function RootLayout({
           </main>
 
           {/* Footer */}
-          <footer className="bg-[#2f1b0c] text-[#f4f4f4] p-6">
+          <footer className="bg-[#241409] text-[#f4f4f4] p-6">
             <Footer />
           </footer>
         </body>
