@@ -1,4 +1,6 @@
+import Link from "next/link";
 import React, { JSX } from "react";
+import { FaFacebook, FaInstagram } from "react-icons/fa6";
 
 const Footer = (): JSX.Element => {
     return (
@@ -11,6 +13,23 @@ const Footer = (): JSX.Element => {
                     <p className="text-sm leading-relaxed text-[#e0dcd6]">
                         Brewing comfort in every cup. Serving quality coffee with speed, style, and soul wherever you are.
                     </p>
+
+                    <h2 className="text-base leading-relaxed text-[#e0dcd6] mt-5">Follow Us</h2>
+                    <div className="flex items-center gap-4 my-2 text-lg">
+                        <Link
+                            href={"https://facebook.com"}
+                            target="blank"
+                        >
+                            <FaFacebook className="w-6 h-6 hover:text-[#B89475] cursor-pointer" />
+                        </Link>
+
+                        <Link
+                            href={"https://instagram.com"}
+                            target="blank"
+                        >
+                            <FaInstagram className="w-6 h-6 hover:text-[#B89475] cursor-pointer" />
+                        </Link>
+                    </div>
                 </div>
 
                 {/* Navigation Links */}
