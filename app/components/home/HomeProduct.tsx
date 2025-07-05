@@ -9,7 +9,10 @@ import { productsLists } from "@/app/data/productLists";
 {/* Product Section */ }
 const HomeProduct = (): JSX.Element => {
     return (
-        <section className="relative min-h-screen w-full bg-[#E3DAC9] py-20 px-4 overflow-hidden">
+        <section
+            id="menu"
+            className="relative min-h-screen w-full bg-[#E3DAC9] py-20 px-4 overflow-hidden"
+        >
             <div className="max-w-6xl mx-auto flex flex-col items-center text-center mb-12">
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}

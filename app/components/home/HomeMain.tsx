@@ -12,7 +12,9 @@ import { AnimatedNumber } from "@/app/components/Animated/AnimatedNumber";
 {/* Hero Section as HomeMain */ }
 const HomeMain = (): JSX.Element => {
     return (
-        <section className="relative h-screen w-full bg-black overflow-hidden">
+        <section
+            id="home"
+            className="relative h-screen w-full bg-black overflow-hidden">
             {/* Background Image */}
             <div className="hidden lg:block absolute inset-0 z-0">
                 <Image
@@ -60,59 +62,68 @@ const HomeMain = (): JSX.Element => {
                             className="flex flex-col sm:flex-row gap-4"
                         >
                             {/* Try It Now */}
-                            <motion.button
-                                whileHover="hover"
-                                initial="initial"
-                                transition={{ duration: 0.3 }}
-                                variants={{
-                                    initial: {},
-                                    hover: {},
-                                }}
-                                className="bg-[#f4c289] hover:bg-[#B89475] text-black font-semibold px-6 py-3 rounded shadow cursor-pointer transition-colors duration-300 ease-in-out flex items-center justify-between"
+                            <Link
+                                href={"#menu"}
                             >
-                                Try It Now
-                                <motion.span
+                                <motion.button
+                                    whileHover="hover"
+                                    initial="initial"
+                                    transition={{ duration: 0.3 }}
                                     variants={{
-                                        initial: { x: 0 },
-                                        hover: { x: [0, 5, 0] },
+                                        initial: {},
+                                        hover: {},
                                     }}
-                                    transition={{
-                                        duration: 0.6,
-                                        ease: "easeInOut",
-                                        times: [0, 0.5, 1],
-                                        repeat: 0,
-                                    }}
-                                    className="ml-3"
+                                    className="bg-[#f4c289] hover:bg-[#B89475] text-black font-semibold px-6 py-3 rounded shadow cursor-pointer transition-colors duration-300 ease-in-out flex items-center justify-between"
                                 >
-                                    <FaArrowRight />
-                                </motion.span>
-                            </motion.button>
+                                    Try It Now
+                                    <motion.span
+                                        variants={{
+                                            initial: { x: 0 },
+                                            hover: { x: [0, 5, 0] },
+                                        }}
+                                        transition={{
+                                            duration: 0.6,
+                                            ease: "easeInOut",
+                                            times: [0, 0.5, 1],
+                                            repeat: 0,
+                                        }}
+                                        className="ml-3"
+                                    >
+                                        <FaArrowRight />
+                                    </motion.span>
+                                </motion.button>
+                            </Link>
 
                             {/* Call to Reserve */}
-                            <motion.button
-                                whileHover="hover"
-                                initial="initial"
-                                className="bg-black text-[#f4c289] font-semibold border border-[#f4c289] px-6 py-3 rounded shadow flex items-center justify-between hover:bg-[#f4c289] hover:text-black cursor-pointer transition-colors duration-300 ease-in-out"
+                            <Link
+                                href={"#started"}
                             >
-                                <motion.span
-                                    variants={{
-                                        initial: { x: 0 },
-                                        hover: {
-                                            x: [0, -2, 2, -2, 2, 0],
-                                        },
-                                    }}
-                                    transition={{
-                                        duration: 0.4,
-                                        ease: "easeInOut",
-                                        times: [0, 0.16, 0.32, 0.48, 0.64, 1],
-                                        repeat: 0,
-                                    }}
-                                    className="mr-3"
+                                <motion.button
+                                    whileHover="hover"
+                                    initial="initial"
+                                    className="bg-black text-[#f4c289] font-semibold border border-[#f4c289] px-6 py-3 rounded shadow flex items-center justify-between hover:bg-[#f4c289] hover:text-black cursor-pointer transition-colors duration-300 ease-in-out"
                                 >
-                                    <IoIosCall className="text-xl" />
-                                </motion.span>
-                                Call to Reserve
-                            </motion.button>
+
+                                    <motion.span
+                                        variants={{
+                                            initial: { x: 0 },
+                                            hover: {
+                                                x: [0, -2, 2, -2, 2, 0],
+                                            },
+                                        }}
+                                        transition={{
+                                            duration: 0.4,
+                                            ease: "easeInOut",
+                                            times: [0, 0.16, 0.32, 0.48, 0.64, 1],
+                                            repeat: 0,
+                                        }}
+                                        className="mr-3"
+                                    >
+                                        <IoIosCall className="text-xl" />
+                                    </motion.span>
+                                    Call to Reserve
+                                </motion.button>
+                            </Link>
                         </motion.div>
                     </div>
 

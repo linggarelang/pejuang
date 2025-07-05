@@ -49,6 +49,7 @@ export const staggerContainer = {
 const HomeAbout = (): JSX.Element => {
     return (
         <motion.section
+            id="about"
             className="relative w-full min-h-screen bg-[#432A1E] flex items-center justify-center py-20 px-4 md:px-0 overflow-hidden"
             initial="hidden"
             whileInView="visible"

@@ -8,7 +8,10 @@ import { FaCoffee, FaShippingFast } from "react-icons/fa";
 {/* Why Us Section as HoneWhyUs */ }
 const HomeWhyUs = (): JSX.Element => {
     return (
-        <section className="relative w-full bg-[#F5F3EE] py-20 px-4 overflow-hidden">
+        <section
+            id="whyus"
+            className="relative w-full bg-[#F5F3EE] py-20 px-4 overflow-hidden"
+        >
             <div className="max-w-6xl mx-auto text-center mb-16">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}

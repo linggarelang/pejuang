@@ -4,26 +4,31 @@ export const navigationLists: NavigationLists[] = [
     {
         id: 1,
         name: "Home",
-        path: "/",
+        path: "#home",
     },
     {
         id: 2,
-        name: "Menu",
-        path: "#",
+        name: "About Us",
+        path: "#about",
     },
     {
         id: 3,
-        name: "About Us",
-        path: "#",
+        name: "Testimonials",
+        path: "#testimonials",
     },
     {
         id: 4,
-        name: "Location",
-        path: "#",
+        name: "Menu",
+        path: "#menu",
     },
     {
         id: 5,
-        name: "Contact",
-        path: "#",
+        name: "Why Us",
+        path: "#whyus",
+    },
+    {
+        id: 6,
+        name: "Let's Start",
+        path: "#started",
     },
 ];

@@ -52,6 +52,7 @@ const staggerContainer = {
 const HomeTestimonials = (): JSX.Element => {
     return (
         <motion.section
+            id="testimonials"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}

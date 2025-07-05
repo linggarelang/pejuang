@@ -1,11 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import React, { JSX } from "react";
 
-import HamburgerMenu from "./HamburgerMenu";
-import NavbarCollapse from "./NavbarCollapse";
-import Link from "next/link";
 import { navigationLists } from "@/app/data/navigationLists";
+import HamburgerMenu from "@/app/components/navbar/HamburgerMenu";
+import NavbarCollapse from "@/app/components/navbar/NavbarCollapse";
 
 
 const Navbar = (): JSX.Element => {
@@ -33,7 +33,7 @@ const Navbar = (): JSX.Element => {
 
     return (
         <nav className="absolute w-full lg:w-4/5 top-0 lg:top-5 left-0 lg:left-1/2 transform lg:-translate-x-1/2 px-4 lg:px-0 z-50" aria-label="Main Navigation">
-            <div className="bg-transparent lg:bg-[#3b2f2f]/80 backdrop-blur-md px-4 py-3 lg:px-8 rounded-md flex items-center justify-between text-white shadow-md">
+            <div className="bg-transparent px-4 py-3 lg:px-8 rounded-md flex items-center justify-between text-white">
                 {/* Logo */}
                 <div className="font-semibold text-lg flex items-center space-x-2">
                     <Link href="/" className="cursor-pointer">

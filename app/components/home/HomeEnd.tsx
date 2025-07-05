@@ -2,11 +2,15 @@
 
 import React, { JSX } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 {/* CTA Button Section as HomeEnd */ }
 const HomeEnd = (): JSX.Element => {
     return (
-        <section className="relative w-full bg-[#2F1B0C] py-20 px-4 overflow-hidden">
+        <section
+            id="started"
+            className="relative w-full bg-[#2F1B0C] py-20 px-4 overflow-hidden"
+        >
             <div className="max-w-5xl mx-auto flex flex-col items-center text-center z-10 relative">
 
                 {/* Background Shape (Optional Decorative) */}
@@ -33,16 +37,20 @@ const HomeEnd = (): JSX.Element => {
                     Order your favorite coffee in seconds — fresh, fast, and just the way you like it.
                 </motion.p>
 
-                <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-                    viewport={{ once: true }}
-                    className="bg-[#f4c289] hover:bg-[#B89475] text-black font-semibold px-8 py-3 rounded-full shadow-md transition duration-300 cursor-pointer"
+                <Link
+                    href={"#menu"}
                 >
-                    Order Now
-                </motion.button>
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+                        viewport={{ once: true }}
+                        className="bg-[#f4c289] hover:bg-[#B89475] text-black font-semibold px-8 py-3 rounded-full shadow-md transition duration-300 cursor-pointer"
+                    >
+                        Order Now
+                    </motion.button>
+                </Link>
             </div>
         </section>
     )
